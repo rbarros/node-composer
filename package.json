@@ -1,0 +1,37 @@
+{
+  "name": "composer",
+  "description": "Using composer.phar with node.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/rbarros/node-composer",
+  "author": {
+    "name": "Ramon Barros",
+    "email": "rbarros_@hotmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rbarros/node-composer"
+  },
+  "bugs": {
+    "url": "https://github.com/rbarros/node-composer/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/rbarros/node-composer/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/composer",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "~0.4.4"
+  },
+  "keywords": []
+}
