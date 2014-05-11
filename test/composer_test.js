@@ -40,10 +40,15 @@ exports['composer'] = {
   },
   'php': function(test) {
     test.expect(1);
-    test.equal(composer.php(), true, 'return options.');
-    //composer.options.php = 'foo -v';
-    //test.throws(composer.php(), Error, 'Fatal error: /bin/sh: 1: foo: not found');
-    //test.throws(composer.php(), Error, 'Fatal error: /bin/sh: 1: foo: not found');
+    //test.equal(composer.php(), true, 'return options.');
+    //test.equal(composer.options.php.stdout, '5.3.10', 'php version');
+    composer.options.php.command = 'foo -v';
+    test.throws(composer.php(), Error, 'Fatal error: /bin/sh: 1: foo: not found');
+    test.done();
+  },
+  'get': function(test) {
+    test.expect(1);
+    test.ok(composer.get());
     test.done();
   }
 };
