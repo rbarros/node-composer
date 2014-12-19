@@ -34,6 +34,22 @@ app.get('/get', function(req, res) {
 app.get('/version', function(req, res) {
     composer.version(function(stdout) {
     //JSON.stringify(stdout)
+      console.log(stdout);
+      res.render('index', { title: 'Teste', composer: stdout });
+    });
+});
+
+app.get('/version-json', function(req, res) {
+    composer.version_json(function(stdout) {
+    //JSON.stringify(stdout)
+      var json = { version: stdout};
+      res.json(json);
+    });
+});
+
+app.get('/self-update', function(req, res) {
+    composer.self_update(function(stdout) {
+    //JSON.stringify(stdout)
       res.render('index', { title: 'Teste', composer: stdout });
     });
 });
